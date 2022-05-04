@@ -1,0 +1,101 @@
+<html>
+    <head>
+     <style>
+         form{
+            
+                margin:0 auto;
+                width: 400px;
+                height: 600px;
+                padding: 1em;
+                border: 1px solid rgb(0, 0, 0);
+                border-radius: 0em;
+            
+         }
+         input[type="name"]
+         {
+             appearance: none;
+         }
+         abbr{
+             display: inline-block;
+             color: red;
+         }
+         fieldset{
+             width: 300px;
+             margin-left: 50px;
+         }
+         button{
+            
+             margin-left: 110px;
+         }
+         body{
+             margin-left: 120px;
+         }
+     </style>
+        
+    </head>
+    <body>
+        <form>
+        <h1>Payment Form</h1>
+        <p>Required fields are followed by *</p>
+        <h2>Contact information</h2>
+        <fieldset>
+            <legend>Title</legend>
+            <p>
+                <label for="title_1">
+                    <input type="radio" id="title_1" name="title " value="k">
+                    King
+                </label><br>
+                <label for="title_2">
+                    <input type="radio" id="title_2" name="title " value="q">
+                    Queen
+                </label><br>
+                <label for="title_3">
+                    <input type="radio" id="title_3" name="title " value="j">
+                    Joker
+                </label>
+            </p>
+            
+        </fieldset>
+        <p>
+            <label for="name"><span>Name: </span> </label>
+            <strong><abbr title="required">*</abbr></strong>
+            <input type="name" id="name" name="user_name">
+        </p>
+        <p>
+            <label for="email"><span>E-mail: </span> </label>
+            <strong><abbr title="required">*</abbr></strong>
+            <input type="email" id="mail" name="user_mail">    
+    
+        </p>
+        <p>
+            <label for="password"><span>Password: </span> </label>
+            <strong><abbr title="required">*</abbr></strong>
+            <input type="password" id="pwd" name="password">
+        </p>
+
+
+        <h2>Payment information</h2>
+        <p>
+            <label for="card"><span>Card type: </span></label>
+            <select id="card" name="usercard">
+                <option value="visa">Visa</option>
+                <option value="mc">Mastercard</option>
+                <option value="amex">American Express</option>
+            </select>
+        </p>
+        <p>
+            <label for="number">Card Number: </label>
+            <strong><abbr title="required">*</abbr></strong>
+            <input type="number" id="card_no" name="card_no">
+        </p>
+        <p>
+            <label for="date">Expiration date: </label>
+            <strong><abbr title="required">*</abbr></strong>
+            <input type="date" id="date" name="Expiration_date" >
+        </p>
+        <p>
+            <button for="submit" >Validate the payment</button>
+        </p>
+        </form>
+    </body>   
+</html>
