@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        const myArr = [{date: "16/05/2022", LogIn: "09:00", LogOut: "19:00"},
+        {date: "17/05/2022", LogIn: "08:30", LogOut: "17:00"}, 
+        {date: "18/05/2022",LogIn: "09:00", LogOut: "18:00"},
+        {date: "23/05/2022",LogIn: "07:00", LogOut: "15:00"}];
+       
+        for (let i = 0; i < myArr.length; i++){
+            const str = myArr[i].date.split('/');
+            const d = [ str[1], str[0], str[2] ].join('/');
+            const str1 = myArr[i+1].date.split('/');
+            const d1 = [ str1[1], str1[0], str1[2] ].join('/');
+
+            var pd = new Date(d + ' ' + myArr[i].LogOut + ':00');
+            var cd = new Date(d1 + ' ' + myArr[i+1].LogIn + ':00');
+            let diff = Math.abs(cd - pd);
+
+            const diffDays = Math.ceil(diff / (1000 * 60 * 60 * 24));
+            let seconds = (diff / 1000).toFixed(1);
+            let minutes = (diff / (1000 * 60)).toFixed(1);
+            let hours = (diff / (1000 * 60 * 60)).toFixed(2);
+            let days = (diff / (1000 * 60 * 60 * 24)).toFixed(1);
+         
+            if (i == 0){
+                console.log(myArr[i].date,"Fully rested");
+            }
+            if (hours < 24){ 
+                var diffdays = Math.floor(hours/24);
+                var diffremmainder = hours % 24;
+                var diffhours = Math.floor(diffremmainder);
+                var diffminutes = Math.floor(60*(diffremmainder-diffhours));
+                diff = diffhours +"Hrs " +diffminutes+ " Mnt"  ;
+            }
+            else{
+                var difdays = Math.floor(hours/24);
+                var difremainder = hours % 24;
+                var difhours = Math.floor(difremainder);
+                diff = difdays + " Days" + " " + difhours + "Hrs";
+            }
+           
+            console.log(myArr[i+1].date,diff);
+          
+        }
+        
+    </script>    
+</body>
+
+</html>
