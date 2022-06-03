@@ -1,14 +1,13 @@
 body{
     box-sizing: border-box;
     text-align: center;
-    border: 1px solid gray;
-    margin: 100px 450px;
-    max-width: 100vw;
-    padding: 10px;
+    /* border: 1px solid gray; */
 }
 .main-title{
+    text-align: center;
     text-transform: uppercase;
     font-family: monospace, 'Courier New', Courier;
+    margin-block-start: 0;
 }
 .content-title{
     text-transform: uppercase;
@@ -20,6 +19,9 @@ body{
 #box{
     padding: 10px;
     width: 350px;
+}
+.actions{
+    align-self: center;
 }
 #task-submit, button{
     text-decoration: none;
@@ -41,4 +43,14 @@ body{
 .task{
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid lightgrey;
+
+}
+.main {
+    width: 500px !important;
+}
+.input-form{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 5px 15px;
 }

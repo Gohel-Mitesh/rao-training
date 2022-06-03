@@ -5,9 +5,12 @@ window.addEventListener('load', () => {
 
     form.addEventListener('submit', (e) => {
         e.preventDefault(); //cancel event
-
+        
         const task = input.value;
-
+        if(task == ""){
+            return window.alert("Please Add Your Task");
+         }
+      
         const task_el = document.createElement("div");
         task_el.classList.add("task");
 
